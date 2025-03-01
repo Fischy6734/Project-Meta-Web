@@ -7,16 +7,16 @@
     <title>Project Meta</title>
     <style>
         body {
-            background-color: #121212;
+            background-color: #1a1a1a; /* Dark background */
             color: #fff;
             font-family: 'NasalizationRg', NasalizationRg, NasalizationRg;
             margin: 0;
-            padding: 20px; /* Added padding for better spacing */
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh; /* Ensures the body takes full height */
-            overflow-y: auto; /* Allows scrolling */
+            min-height: 100vh;
+            overflow-y: auto;
         }
         h1 {
             font-size: 3em;
@@ -24,26 +24,40 @@
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 5px;
-            color: #00ffcc;
+            color: #ff00ff; /* Magenta color */
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* Glow effect */
+            animation: glow 1.5s infinite alternate; /* Pulsating glow animation */
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+            }
+            to {
+                text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+            }
         }
         .team {
             display: flex;
             justify-content: center;
             gap: 30px;
-            flex-wrap: wrap; /* Allows wrapping of team members */
+            flex-wrap: wrap;
         }
         .team-member {
             font-size: 1.5em;
             position: relative;
             padding: 10px 20px;
-            border: 2px solid #00ffcc;
+            border: 2px solid #ff00ff; /* Magenta border */
             border-radius: 10px;
             cursor: pointer;
             transition: 0.3s ease-in-out;
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; /* Glow effect */
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5); /* Soft glow */
         }
         .team-member:hover {
-            background-color: #00ffcc;
-            color: #121212;
+            background-color: #ff00ff; /* Magenta background on hover */
+            color: #1a1a1a;
+            text-shadow: 0 0 10px #1a1a1a, 0 0 20px #1a1a1a; /* Glow effect on hover */
+            box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* Stronger glow on hover */
         }
         .team-member::after {
             content: '';
@@ -52,11 +66,12 @@
             left: -5px;
             right: -5px;
             bottom: -5px;
-            background-color: rgba(0, 255, 204, 0.3);
+            background-color: rgba(255, 0, 255, 0.3); /* Magenta glow */
             border-radius: 15px;
             z-index: -1;
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
+            filter: blur(10px); /* Bloom effect */
         }
         .team-member:hover::after {
             opacity: 1;
@@ -67,13 +82,15 @@
             top: 100%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #00ffcc;
-            color: #121212;
+            background-color: #ff00ff; /* Magenta tooltip */
+            color: #1a1a1a;
             padding: 5px 10px;
             border-radius: 5px;
             font-size: 1em;
             white-space: nowrap;
             margin-top: 10px;
+            text-shadow: 0 0 5px #1a1a1a, 0 0 10px #1a1a1a; /* Glow effect */
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5); /* Soft glow */
         }
         .team-member:hover span {
             visibility: visible;
@@ -81,35 +98,40 @@
         .download-btn {
             margin-top: 40px;
             padding: 15px 40px;
-            background-color: #00ffcc;
-            color: #121212;
+            background-color: #ff00ff; /* Magenta button */
+            color: #1a1a1a;
             border: none;
             border-radius: 10px;
             font-size: 1.5em;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 2px;
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+            text-shadow: 0 0 5px #1a1a1a, 0 0 10px #1a1a1a; /* Glow effect */
+            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Strong glow */
             transition: 0.3s ease-in-out;
         }
         .download-btn:hover {
-            background-color: #121212;
-            color: #00ffcc;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.9);
+            background-color: #1a1a1a;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Glow effect on hover */
+            box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* Stronger glow on hover */
         }
         .version-info {
             margin-top: 40px;
             text-align: center;
             font-size: 1.2em;
-            color: #00ffcc;
-            background-color: #1a1a1a;
+            color: #ff00ff; /* Magenta text */
+            background-color: #2a2a2a; /* Slightly lighter dark background */
             padding: 20px;
             border-radius: 10px;
-            border: 2px solid #00ffcc;
+            border: 2px solid #ff00ff; /* Magenta border */
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; /* Glow effect */
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5); /* Soft glow */
         }
         .version-info h2 {
             font-size: 2em;
             margin-bottom: 10px;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Glow effect */
         }
         .update-details {
             font-size: 1.1em;
@@ -118,26 +140,21 @@
         }
         .update-details li {
             margin: 5px 0;
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; /* Glow effect */
         }
         footer {
-            margin-top: auto; /* Pushes footer to the bottom */
+            margin-top: auto;
             padding: 20px;
             text-align: center;
             font-size: 1em;
-            color: #00ffcc;
+            color: #ff00ff; /* Magenta footer text */
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; /* Glow effect */
         }
     </style>
 </head>
 <body>
-
-	
-	    <h1>Project Meta</h1>
-    </head>
- <div class="team-member fischybigpants">
-            Blank
-            <span>Blank</span>
-        </div>
-</html>
+    <h1>Project Meta</h1>
+    <div class="team">
         <div class="team-member fischybigpants">
             Blank
             <span>Blank</span>
@@ -150,7 +167,7 @@
             Blank
             <span>Blank</span>
         </div>
-	<div class="team-member Sm-Aiden">
+        <div class="team-member Sm-Aiden">
             Blank
             <span>Blank</span>
         </div>
@@ -165,30 +182,27 @@
                 <li></li>
                 <li></li>
                 <li></li>
-		<li></li>
-		<li</li>
-		<li></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
     </div>
-
 
     <div class="version-info">
         <h2>Next Version:</h2>
         <div class="update-details">
             <h3>What we are working on:</h3>
-		
             <ul>
-                <li>                                                        </li>
-                <li>                                                        </li>
-                <li>                                                        </li>
-                <li>                                                        </li>
-		<li>                                                        </li>
-		<li>                                                        </li>
-		<li>                                                        </li>
-		<li>                                                        </li>
-		<h3>                                                        </h3>
-</ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
     </div>
 
@@ -196,5 +210,8 @@
         <button class="download-btn">Download Now</button>
     </a>
 
- 
-
+    <footer>
+        &copy; 2023 Project Meta. All rights reserved.
+    </footer>
+</body>
+</html>
